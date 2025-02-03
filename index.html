@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        html, body {
+            height: 100%; 
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            background-image: linear-gradient(rgb(252, 209, 216),rgb(174, 250, 244));
+            background-size: cover; 
+            background-position: center;
+            min-height: 100%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #e5bfffb3;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            position: relative;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #66ff99;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+        .card {
+            background-image: linear-gradient(#f3ccd9,#9ac2fd);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: black;
+            padding: 20px;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+        .card p {
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .tag {
+            background: hsl(229, 62%, 68%);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 10px auto;
+            width: fit-content;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            body {
+                background-size: cover; 
+                background-attachment: scroll;
+                height: 100%;
+            }
+
+
+        }
+
+        @media (max-width :551px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+                border-radius: 5px;
+                width: 200px;
+            }
+            .nav.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div>DAILY LIFE</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <img src="me.jpg" alt="myself">
+            <h3>Ryan Romero</h3>
+            <p>I'm a passionate gamer who loves exploring immersive worlds and mastering new challenges. When I'm not gaming, I create digital art, bringing characters and ideas to life with vibrant colors and unique designs. Whether it's leveling up in a game or refining my latest artwork, creativity and technology fuel my passion every day.</p>
+            <div class="tag">About Me</div>
+        </div>
+        <div class="card">
+            <img src="hobby.png" alt="drawing">
+            <h3>Hobby</h3>
+            <p> I love creating digital art, transforming my ideas into vibrant and dynamic visuals. Using different tools and techniques, I enjoy experimenting with colors, textures, and styles to bring my imagination to life. Every piece I create is a reflection of my passion for creativity and storytelling through digital mediums.</p>
+            <div class="tag">About art</div>
+        </div>
+        <div class="card">
+            <img src="wife.jpeg" alt="wifie">
+            <h3>My Wife</h3>
+            <p>She's my wife(girlfriend) the love of my life that I devoted with my everything, the person I can proudly brag to anyone. She is an amazing person with great personality that supports me in every step i take towards my goal. She also brings joy into my life with her kindness, creativity, and love that brings out the best  of me. </p>
+            <div class="tag">About her</div>
+        </div>
+    </div>
+</body>
+</html>
+
